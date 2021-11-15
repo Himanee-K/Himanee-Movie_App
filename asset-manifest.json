@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Himanee-Movie_App/static/css/main.9f8a2250.chunk.css",
+    "main.js": "/Himanee-Movie_App/static/js/main.58abb164.chunk.js",
+    "main.js.map": "/Himanee-Movie_App/static/js/main.58abb164.chunk.js.map",
+    "runtime-main.js": "/Himanee-Movie_App/static/js/runtime-main.3554f7e7.js",
+    "runtime-main.js.map": "/Himanee-Movie_App/static/js/runtime-main.3554f7e7.js.map",
+    "static/css/2.df84d89f.chunk.css": "/Himanee-Movie_App/static/css/2.df84d89f.chunk.css",
+    "static/js/2.c9cd2417.chunk.js": "/Himanee-Movie_App/static/js/2.c9cd2417.chunk.js",
+    "static/js/2.c9cd2417.chunk.js.map": "/Himanee-Movie_App/static/js/2.c9cd2417.chunk.js.map",
+    "index.html": "/Himanee-Movie_App/index.html",
+    "precache-manifest.d1f91d8857d566fd2116439adf39b411.js": "/Himanee-Movie_App/precache-manifest.d1f91d8857d566fd2116439adf39b411.js",
+    "service-worker.js": "/Himanee-Movie_App/service-worker.js",
+    "static/css/2.df84d89f.chunk.css.map": "/Himanee-Movie_App/static/css/2.df84d89f.chunk.css.map",
+    "static/css/main.9f8a2250.chunk.css.map": "/Himanee-Movie_App/static/css/main.9f8a2250.chunk.css.map",
+    "static/js/2.c9cd2417.chunk.js.LICENSE.txt": "/Himanee-Movie_App/static/js/2.c9cd2417.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3554f7e7.js",
+    "static/css/2.df84d89f.chunk.css",
+    "static/js/2.c9cd2417.chunk.js",
+    "static/css/main.9f8a2250.chunk.css",
+    "static/js/main.58abb164.chunk.js"
+  ]
+}
