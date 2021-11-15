@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams, Link } from "react-router-dom";
 
-const EditUser = () => {
+const EditMovie = () => {
   let history = useHistory();
   const { id } = useParams();
-  const [user, setUser] = useState({
-    name: "",
-    username: "",
-    email: "",
-    phone: "",
-    website: ""
+  const [movie, setUser] = useState({
+    movieName: "",
+    actor: "",
+    genre: "",
+    language: "",
+    director: ""
   });
 
-  const { name, username, email, phone, website } = user;
+  const { movieName, actor, genre, language, director } = movie;
   const onInputChange = e => {
-    setUser({ ...user, [e.target.name]: e.target.value });
+    setUser({ ...movie, [e.target.name]: e.target.value });
   };
 
   useEffect(() => {
@@ -24,26 +24,31 @@ const EditUser = () => {
 
   const onSubmit = async e => {
     e.preventDefault();
-    await axios.put(`http://localhost:3003/users/${id}`, user);
+    await axios.put(`http://localhost:3003/movies/${id}`, movie);
     history.push("/");
   };
 
   const loadUser = async () => {
-    const result = await axios.get(`http://localhost:3003/users/${id}`);
+    const result = await axios.get(`http://localhost:3003/movies/${id}`);
     setUser(result.data);
+    
   };
+  
   return (
-    <div className="container">
+    <div className="container my-3">
       <div className="w-75 mx-auto shadow p-5">
-        <h2 className="text-center mb-4">Edit A User</h2>
+      <Link className="btn btn-primary" to="/">
+        back to Home
+      </Link>
+        <h2 className="text-center mb-4">Edit Movie</h2>
         <form onSubmit={e => onSubmit(e)}>
           <div className="form-group">
             <input
               type="text"
               className="form-control form-control-lg"
               placeholder="Enter Your Name"
-              name="name"
-              value={name}
+              name="movieName"
+              value={movieName}
               onChange={e => onInputChange(e)}
             />
           </div>
@@ -52,28 +57,30 @@ const EditUser = () => {
               type="text"
               className="form-control form-control-lg"
               placeholder="Enter Your Username"
-              name="username"
-              value={username}
+              name="actor"
+              value={actor}
               onChange={e => onInputChange(e)}
             />
           </div>
           <div className="form-group">
-            <input
-              type="email"
-              className="form-control form-control-lg"
-              placeholder="Enter Your E-mail Address"
-              name="email"
-              value={email}
+            <select class="form-control form-control-lg" name="genre"
+              value={genre}
               onChange={e => onInputChange(e)}
-            />
+              required={true}>
+              <option value="" selected disabled hidden>Please select Genre</option>
+              <option>Comedy</option>
+              <option>Romance</option>
+              <option>Thriller</option>
+              <option>Sci-fi</option>
+            </select>
           </div>
           <div className="form-group">
             <input
               type="text"
               className="form-control form-control-lg"
               placeholder="Enter Your Phone Number"
-              name="phone"
-              value={phone}
+              name="language"
+              value={language}
               onChange={e => onInputChange(e)}
             />
           </div>
@@ -81,17 +88,17 @@ const EditUser = () => {
             <input
               type="text"
               className="form-control form-control-lg"
-              placeholder="Enter Your Website Name"
-              name="website"
-              value={website}
+              placeholder="Enter Your director Name"
+              name="director"
+              value={director}
               onChange={e => onInputChange(e)}
             />
           </div>
-          <button className="btn btn-warning btn-block">Update User</button>
+          <button className="btn btn-warning btn-block">Update Movie</button>
         </form>
       </div>
     </div>
   );
 };
 
-export default EditUser;
+export default EditMovie;

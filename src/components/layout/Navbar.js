@@ -4,8 +4,8 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container">
-        <Link className="navbar-brand" href="/">
-          Recat User
+        <Link className="navbar-brand logo" to="/">
+          Movies App
         </Link>
         <button
           className="navbar-toggler"
@@ -20,26 +20,24 @@ const Navbar = () => {
         </button>
 
         <div className="collapse navbar-collapse">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
+          <ul className="navbar-nav m-3 mr-auto">
+            <li className="nav-item ml-3 mr-3">
               <NavLink className="nav-link" exact to="/">
                 Home
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item ml-3 mr-3">
               <NavLink className="nav-link" exact to="/about">
                 About
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" exact to="/contact">
-                Contact
+            <li className="nav-item ml-3 mr-3">
+              <NavLink className="nav-link" exact to="/addnew">
+                Create New
               </NavLink>
             </li>
           </ul>
         </div>
-
-        <Link className="btn btn-outline-light" to="/users/add">Add User</Link>
       </div>
     </nav>
   );
